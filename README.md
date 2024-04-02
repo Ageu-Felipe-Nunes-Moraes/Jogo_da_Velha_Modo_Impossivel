@@ -1,6 +1,6 @@
 # Jogo da Velha
 
-Eu, Ageu Felipe Nunes Moraes, desenvolvi uma versão do jogo da velha com diferentes funcionalidades, permitindo jogar em modo texto com várias dimensões ou em modo gráfico contra o computador.
+Eu, Ageu Felipe Nunes Moraes, recriei o Jogo da Velha para fins acadêmicos, inspirado no clássico Tic-Tac-Toe. A minha versão permite jogar em modo texto com várias dimensões ou em modo gráfico contra o computador.
 
 ## Funcionalidades
 
