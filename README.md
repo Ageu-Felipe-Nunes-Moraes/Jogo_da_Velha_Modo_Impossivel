@@ -13,6 +13,13 @@ Eu, Ageu Felipe Nunes Moraes, recriei o Jogo da Velha para fins acadêmicos, ins
 
 - Python 3.x
 - Pygame
+- Numpy
+
+## Bibliotecas Necessárias
+
+- `pygame`: Para desenvolvimento de jogos.
+- `numpy`: Para manipular matrizes.
+- `os`: Para sistema operacional.
 
 ## Como Jogar
 
