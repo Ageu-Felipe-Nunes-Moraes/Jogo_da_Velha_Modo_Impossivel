@@ -42,7 +42,7 @@ Se deseja contribuir para o desenvolvimento deste jogo, siga estas etapas:
 
 ## Autor
 
-Este jogo foi recriado por Ageu Felipe Nunes Moraes como parte de um projeto acadêmico.
+Este jogo foi recriado por Ageu Felipe Nunes Moraes como parte de um projeto acadêmico inspirado no clássico jogo da Velha.
 Para dúvidas ou sugestões, entre em contato pelo email [ageumoraes67@gmail.com].
 
 ## Aviso Legal
