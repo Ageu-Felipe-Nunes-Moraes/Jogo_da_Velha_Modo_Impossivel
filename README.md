@@ -4,13 +4,16 @@
 Eu, Ageu Felipe Nunes Moraes, recriei o Jogo da Velha para fins acadêmicos, inspirado no clássico Tic-Tac-Toe. A minha versão permite jogar em modo gráfico contra o computador(IMPOSSÍVEL DE VENCER).
 
 
-## Requisito de Instalação
+## Requisitos de Instalação
 
 - Python 3.x
+- pygame
+- os
 
 ## Bibliotecas Necessárias
 
-- `numpy`: Para manipular matrizes.
+- `pygame`: Para desenvolvimento de jogos.
+- `os`: Para sistema operacional.
 
 ## Como Jogar
 
