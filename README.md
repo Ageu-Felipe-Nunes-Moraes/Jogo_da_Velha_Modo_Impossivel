@@ -1,35 +1,26 @@
+
 # Jogo da Velha
 
-Eu, Ageu Felipe Nunes Moraes, recriei o Jogo da Velha para fins acadêmicos, inspirado no clássico Tic-Tac-Toe. A minha versão permite jogar em modo texto com várias dimensões ou em modo gráfico contra o computador.
+Eu, Ageu Felipe Nunes Moraes, recriei o Jogo da Velha para fins acadêmicos, inspirado no clássico Tic-Tac-Toe. A minha versão permite jogar em modo gráfico contra o computador(IMPOSSÍVEL DE VENCER).
 
-## Funcionalidades
 
-- **Modo de Jogo Textual:** Jogue em um ambiente de terminal com a opção de escolher a dimensão do tabuleiro e jogar contra outro jogador humano.
-- **Modo Gráfico:** Jogue em uma interface gráfica contra o computador no modo de dificuldade impossível em um tabuleiro clássico de 3x3.
-- **Opções de Dimensão:** No modo textual, é possível escolher o tamanho do tabuleiro para além do tradicional 3x3.
-- **Estratégia Algorítmica:** O modo de jogo contra o computador utiliza-se de lógicas condicionais que operam no modo impossível, proporcionando um desafio significativo.
-
-## Requisitos de Instalação
+## Requisito de Instalação
 
 - Python 3.x
-- Pygame
-- Numpy
 
 ## Bibliotecas Necessárias
 
-- `pygame`: Para desenvolvimento de jogos.
 - `numpy`: Para manipular matrizes.
-- `os`: Para sistema operacional.
 
 ## Como Jogar
 
-1. Certifique-se de ter Python e Pygame instalados em seu sistema.
+1. Certifique-se de ter Python instalado em seu sistema.
 2. Clone ou baixe o repositório deste jogo.
 3. Execute o arquivo principal do jogo.
-4. Escolha o modo de jogo desejado: texto ou gráfico.
-5. No modo de jogo textual, insira as dimensões do tabuleiro desejadas e siga as instruções para jogar contra outro jogador humano.
-6. No modo gráfico, jogue contra o computador no tabuleiro de 3x3.
-7. Em ambos os modos, siga as regras tradicionais do jogo da velha para marcar uma linha, coluna ou diagonal com três símbolos iguais.
+4. Jogue contra o computador no tabuleiro de 3x3(modo impossível).
+5. Use o mouse para escolher a posição que desejar.
+6. Pressione "r" para reiniciar o jogo sempre que quiser.
+7. Siga as regras tradicionais do jogo da velha para marcar uma linha, coluna ou diagonal com três símbolos iguais.
 
 ## Como Contribuir
 
@@ -48,4 +39,3 @@ Para dúvidas ou sugestões, entre em contato pelo email [ageumoraes67@gmail.com
 ## Aviso Legal
 
 Este é um projeto de software independente e não tem afiliação com marcas ou produtos relacionados ao jogo da velha ou suas variantes.
-
