@@ -17,7 +17,7 @@ Eu, Ageu Felipe Nunes Moraes, recriei o Jogo da Velha para fins acadêmicos, ins
 
 ## Como Jogar
 
-1. Certifique-se de ter Python instalado em seu sistema.
+1. Certifique-se de ter Python e pygame instalados em seu sistema.
 2. Clone ou baixe o repositório deste jogo.
 3. Execute o arquivo principal do jogo.
 4. Jogue contra o computador no tabuleiro de 3x3(modo impossível).
