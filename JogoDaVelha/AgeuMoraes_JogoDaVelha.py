@@ -6,21 +6,21 @@ import os  # Sistema operacional
 pygame.init()
 
 # Trazendo arquivos para o jogo através dos seus caminhos relativos
-caminhoAtual = os.path.abspath(os.path.dirname(__file__))
+caminho_atual = os.path.abspath(os.path.dirname(__file__))
 
-caminhoRelativoX = os.path.join(caminhoAtual, 'xBranco.png')
-caminhoRelativoBola = os.path.join(caminhoAtual, 'bolaBranca.png')
-caminhoRelativoFundo = os.path.join(caminhoAtual, 'imagemFundoJogoVelha.jpg')
-caminhoRelativoMusica = os.path.join(caminhoAtual, 'sigma.mp3')
+caminho_relativo_x = os.path.join(caminho_atual, 'xBranco.png')
+caminho_relativo_bola = os.path.join(caminho_atual, 'bolaBranca.png')
+caminho_relativo_fundo = os.path.join(caminho_atual, 'imagemFundoJogoVelha.jpg')
+caminho_relativo_musica = os.path.join(caminho_atual, 'sigma.mp3')
 
-xImgem = pygame.image.load(caminhoRelativoX)
-bolaImagem = pygame.image.load(caminhoRelativoBola)
-imagemFundo = pygame.image.load(caminhoRelativoFundo)
-pygame.mixer.music.load(caminhoRelativoMusica)
+x_imgem = pygame.image.load(caminho_relativo_x)
+bola_imagem = pygame.image.load(caminho_relativo_bola)
+imagem_fundo = pygame.image.load(caminho_relativo_fundo)
+pygame.mixer.music.load(caminho_relativo_musica)
 pygame.mixer.music.play(loops=-1)
 
 # Variável boleana para a janela
-janelaAberta = True
+janela_aberta = True
 
 # Dimensões de tela
 largura = 1300
@@ -29,26 +29,26 @@ altura = 700
 # Configurações de tela
 tela = pygame.display.set_mode((largura, altura))
 tela.fill((5, 5, 5))
-tela.blit(imagemFundo, (345, 45))
+tela.blit(imagem_fundo, (345, 45))
 pygame.display.set_caption("JOGO DA VELHA")
 
 # Área de cliqu do jogador
-espacoClique1 = pygame.Rect(365, 60, 185, 185)
-espacoClique2 = pygame.Rect(560, 60, 180, 185)
-espacoClique3 = pygame.Rect(753, 60, 185, 185)
-espacoClique4 = pygame.Rect(365, 255, 185, 180)
-espacoClique5 = pygame.Rect(560, 255, 180, 180)
-espacoClique6 = pygame.Rect(753, 255, 185, 180)
-espacoClique7 = pygame.Rect(365, 447, 185, 185)
-espacoClique8 = pygame.Rect(560, 447, 180, 185)
-espacoClique9 = pygame.Rect(753, 447, 185, 185)
+espaco_clique1 = pygame.Rect(365, 60, 185, 185)
+espaco_clique2 = pygame.Rect(560, 60, 180, 185)
+espaco_clique3 = pygame.Rect(753, 60, 185, 185)
+espaco_clique4 = pygame.Rect(365, 255, 185, 180)
+espaco_clique5 = pygame.Rect(560, 255, 180, 180)
+espaco_clique6 = pygame.Rect(753, 255, 185, 180)
+espaco_clique7 = pygame.Rect(365, 447, 185, 185)
+espaco_clique8 = pygame.Rect(560, 447, 180, 185)
+espaco_clique9 = pygame.Rect(753, 447, 185, 185)
 
 # Variávies boleanas que posicionam e definem o jogo na tela e notifica o ganhador ou perdedor
 jogador = False
 computador = False
 
-vitoriaHumana = False
-vitoriaMaquina = False
+vitoria_humana = False
+vitoria_maquina = False
 empate = False
 
 x1 = False
@@ -84,9 +84,9 @@ clicavel9 = True
 defender = True
 
 # Contadores de pontuação
-contadorX = 0
-contadorBola = 0
-contadorEmpate = 0
+contador_x = 0
+contador_bola = 0
+contador_empate = 0
 
 
 # Define as posições de mensagens
@@ -96,28 +96,28 @@ def posicoes(mensagem, x, y):
 
 # Reinicia o jogo
 def reiniciar():
-    global jogador, computador, vitoriaHumana, vitoriaMaquina, clicavel1, clicavel2, clicavel3, clicavel4, clicavel5,\
+    global jogador, computador, vitoria_humana, vitoria_maquina, clicavel1, clicavel2, clicavel3, clicavel4, clicavel5,\
         clicavel6, clicavel7, clicavel8, clicavel9, x1, x2, x3, x4, x5, x6, x7, x8, x9, b1, b2, b3, b4, b5, b6, b7, b8,\
-        b9, defender, contadorEmpate, contadorX, contadorBola, empate
+        b9, defender, contador_empate, contador_x, contador_bola, empate
 
-    if vitoriaMaquina:
-        contadorBola += 1
+    if vitoria_maquina:
+        contador_bola += 1
 
     elif empate:
-        contadorEmpate += 1
+        contador_empate += 1
 
-    elif vitoriaHumana:
-        contadorX += 1
+    elif vitoria_humana:
+        contador_x += 1
 
-    vitoriaHumana = False
-    vitoriaMaquina = False
+    vitoria_humana = False
+    vitoria_maquina = False
     empate = False
 
     jogador = False
     computador = False
 
-    vitoriaHumana = False
-    vitoriaMaquina = False
+    vitoria_humana = False
+    vitoria_maquina = False
 
     x1 = False
     x2 = False
@@ -152,57 +152,57 @@ def reiniciar():
     defender = True
 
     tela.fill((5, 5, 5))
-    tela.blit(imagemFundo, (345, 45))
+    tela.blit(imagem_fundo, (345, 45))
 
 
 # Cria os X que aparecem na tela
 class X:
     def __init__(self, espaco, x, y):
-        global jogador, computador, espacoClique1, espacoClique2, espacoClique3, espacoClique4, espacoClique5,\
-            espacoClique6, espacoClique7, espacoClique8, espacoClique9, x1, x2, x3, x4, x5, x6, x7, x8, x9
+        global jogador, computador, espaco_clique1, espaco_clique2, espaco_clique3, espaco_clique4, espaco_clique5,\
+            espaco_clique6, espaco_clique7, espaco_clique8, espaco_clique9, x1, x2, x3, x4, x5, x6, x7, x8, x9
 
-        xjogador = pygame.transform.scale(xImgem, (200, 200))
+        x_jogador = pygame.transform.scale(x_imgem, (200, 200))
 
         if evento.type == pygame.MOUSEBUTTONDOWN:
             if evento.button == 1:
                 if espaco.collidepoint(evento.pos):
-                    tela.blit(xjogador, (x, y))
+                    tela.blit(x_jogador, (x, y))
 
                     if jogador:
-                        if quantidadeX == quantidadeBolas:
-                            if espaco == espacoClique1:
+                        if quantidade_x == quantidade_bolas:
+                            if espaco == espaco_clique1:
                                 x1 = True
 
-                            if espaco == espacoClique2:
+                            if espaco == espaco_clique2:
                                 x2 = True
 
-                            if espaco == espacoClique3:
+                            if espaco == espaco_clique3:
                                 x3 = True
 
-                            if espaco == espacoClique4:
+                            if espaco == espaco_clique4:
                                 x4 = True
 
-                            if espaco == espacoClique5:
+                            if espaco == espaco_clique5:
                                 x5 = True
 
-                            if espaco == espacoClique6:
+                            if espaco == espaco_clique6:
                                 x6 = True
 
-                            if espaco == espacoClique7:
+                            if espaco == espaco_clique7:
                                 x7 = True
 
-                            if espaco == espacoClique8:
+                            if espaco == espaco_clique8:
                                 x8 = True
 
-                            if espaco == espacoClique9:
+                            if espaco == espaco_clique9:
                                 x9 = True
 
 
 # Cria as bolas que aparecem na tela
 class Bola:
     def __init__(self,  x, y):
-        bolajogador = pygame.transform.scale(bolaImagem, (200, 200))
-        tela.blit(bolajogador, (x, y))
+        bola_jogador = pygame.transform.scale(bola_imagem, (200, 200))
+        tela.blit(bola_jogador, (x, y))
 
 
 # Cria as linhas que traçam a vitória
@@ -212,38 +212,38 @@ class Linha:
 
 
 # Programa que mantem a janela aberta
-while janelaAberta:
+while janela_aberta:
     pygame.time.delay(30)
-    listax = [x1, x2, x3, x4, x5, x6, x7, x8, x9]
-    listab = [b1, b2, b3, b4, b5, b6, b7, b8, b9]
+    lista_x = [x1, x2, x3, x4, x5, x6, x7, x8, x9]
+    lista_b = [b1, b2, b3, b4, b5, b6, b7, b8, b9]
 
-    quantidadeX = listax.count(True)
-    quantidadeBolas = listab.count(True)
+    quantidade_x = lista_x.count(True)
+    quantidade_bolas = lista_b.count(True)
 
     # Verifica se é a vez do jogador
-    if quantidadeX == quantidadeBolas:
+    if quantidade_x == quantidade_bolas:
         jogador = True
         computador = False
 
     # Legendas que aparecem na tela
-    fonteInstrucao = pygame.font.Font(None, 35)
-    mensagemDeAfronta = "ME VENÇA NO JOGO DA VELHA!!! SE FOR CAPAZ, É CLÁRO HAHAHAHAHAHAHAH"
-    mensagemInicial = fonteInstrucao.render(mensagemDeAfronta, True, (255, 255, 255))
-    mensagemParaReiniciar = "PRESSIONE A LETRA 'R' PARA TENTAR NOVAMENTE"
-    avisoParaReiniciar = fonteInstrucao.render(mensagemParaReiniciar, True, (255, 255, 255))
-    posicoes(avisoParaReiniciar, 332, 665)
-    posicoes(mensagemInicial, 160, 10)
+    fonte_instrucao = pygame.font.Font(None, 35)
+    mensagem_de_afronta = "ME VENÇA NO JOGO DA VELHA!!! SE FOR CAPAZ, É CLÁRO HAHAHAHAHAHAHAH"
+    mensagem_inicial = fonte_instrucao.render(mensagem_de_afronta, True, (255, 255, 255))
+    mensagem_para_reiniciar = "PRESSIONE A LETRA 'R' PARA TENTAR NOVAMENTE"
+    aviso_para_reiniciar = fonte_instrucao.render(mensagem_para_reiniciar, True, (255, 255, 255))
+    posicoes(aviso_para_reiniciar, 332, 665)
+    posicoes(mensagem_inicial, 160, 10)
 
-    fontePontos = pygame.font.Font(None, 35)
-    pontuacaoX = str(f"JOGADOR = {contadorX}")
-    pontuacaoBola = str(f"COMPUTADOR = {contadorBola}")
-    pontuacaoEmpate = str(f"EMPATES = {contadorEmpate}")
-    mensagemPontuacaoX = fontePontos.render(pontuacaoX, True, (255, 255, 255))
-    mensagemPontuacaoBola = fontePontos.render(pontuacaoBola, True, (255, 255, 255))
-    mensagemPontuacaoEmpate = fontePontos.render(pontuacaoEmpate, True, (255, 255, 255))
-    posicoes(mensagemPontuacaoX, 50, 350)
-    posicoes(mensagemPontuacaoBola, 50, 250)
-    posicoes(mensagemPontuacaoEmpate, 50, 150)
+    fonte_pontos = pygame.font.Font(None, 35)
+    pontuacao_x = str(f"JOGADOR = {contador_x}")
+    pontuacao_bola = str(f"COMPUTADOR = {contador_bola}")
+    pontuacao_empate = str(f"EMPATES = {contador_empate}")
+    mensagem_pontuacao_x = fonte_pontos.render(pontuacao_x, True, (255, 255, 255))
+    mensagem_pontuacao_bola = fonte_pontos.render(pontuacao_bola, True, (255, 255, 255))
+    mensagem_pontuacao_empate = fonte_pontos.render(pontuacao_empate, True, (255, 255, 255))
+    posicoes(mensagem_pontuacao_x, 50, 350)
+    posicoes(mensagem_pontuacao_bola, 50, 250)
+    posicoes(mensagem_pontuacao_empate, 50, 150)
 
     # Verifica se o jogador pressionou o botão de reiniciar
     for evento in pygame.event.get():
@@ -253,28 +253,28 @@ while janelaAberta:
 
         # Verifica se o jogador apertou o botão de fechar o jogo
         if evento.type == pygame.QUIT:
-            janelaAberta = False
+            janela_aberta = False
 
     # Vez do jogador
     if jogador:
         if clicavel1:
-            espacox1 = X(espacoClique1, 350, 50)
+            espaco_x1 = X(espaco_clique1, 350, 50)
         if clicavel2:
-            espacox2 = X(espacoClique2, 545, 50)
+            espaco_x2 = X(espaco_clique2, 545, 50)
         if clicavel3:
-            espacox3 = X(espacoClique3, 738, 50)
+            espaco_x3 = X(espaco_clique3, 738, 50)
         if clicavel4:
-            espacox4 = X(espacoClique4, 350, 245)
+            espaco_x4 = X(espaco_clique4, 350, 245)
         if clicavel5:
-            espacox5 = X(espacoClique5,  545, 245)
+            espaco_x5 = X(espaco_clique5,  545, 245)
         if clicavel6:
-            espacox6 = X(espacoClique6, 738, 245)
+            espaco_x6 = X(espaco_clique6, 738, 245)
         if clicavel7:
-            espacox7 = X(espacoClique7, 350, 437)
+            espaco_x7 = X(espaco_clique7, 350, 437)
         if clicavel8:
-            espacox8 = X(espacoClique8, 545, 437)
+            espaco_x8 = X(espaco_clique8, 545, 437)
         if clicavel9:
-            espacox9 = X(espacoClique9, 738, 437)
+            espacox9 = X(espaco_clique9, 738, 437)
         jogador = False
         computador = True
 
@@ -318,11 +318,11 @@ while janelaAberta:
                 clicavel9 = False
 
         # O computador só vai jogar se for a vez dele
-        if quantidadeX > quantidadeBolas:
+        if quantidade_x > quantidade_bolas:
             computador = False
 
         # Empate
-        if quantidadeX == 5 and quantidadeBolas == 4:
+        if quantidade_x == 5 and quantidade_bolas == 4:
             empate = True
 
         # Todas as possibilidades de jogadas no jogo da velha 3x3
@@ -764,143 +764,143 @@ while janelaAberta:
             clicavel7 = False
 
         # Esse código só vai acontecer se for a vez do computador
-        if quantidadeX > quantidadeBolas:
+        if quantidade_x > quantidade_bolas:
 
             # POSSIBILIDADES DE GANHO DO COMPUTADOR
             # Computador ganha na primeira faixa
             if b1 and b2 and b3 is False and x3 is False:
                 b3 = True
                 linha1 = Linha(375, 150, 920, 150)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
             elif b2 and b3 and b1 is False and x1 is False:
                 b1 = True
                 linha1 = Linha(375, 150, 920, 150)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
             elif b1 and b3 and b2 is False and x2 is False:
                 b2 = True
                 linha1 = Linha(375, 150, 920, 150)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
 
             # Computador ganha na segunda faixa
             elif b4 and b5 and b6 is False and x6 is False:
                 b6 = True
                 linha2 = Linha(375, 340, 920, 340)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
             elif b5 and b6 and b4 is False and x4 is False:
                 b4 = True
                 linha2 = Linha(375, 340, 920, 340)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
             elif b4 and b6 and b5 is False and x5 is False:
                 b5 = True
                 linha2 = Linha(375, 340, 920, 340)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
 
             # Computador ganha na terceira faixa
             elif b7 and b8 and b9 is False and x9 is False:
                 b9 = True
                 linha3 = Linha(375, 535, 920, 535)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
             elif b8 and b9 and b7 is False and x7 is False:
                 b7 = True
                 linha3 = Linha(375, 535, 920, 535)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
             elif b7 and b9 and b8 is False and x8 is False:
                 b8 = True
                 linha3 = Linha(375, 535, 920, 535)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
 
             # Computador ganha na primeira coluna
             elif b1 and b4 and b7 is False and x7 is False:
                 b7 = True
                 coluna1 = Linha(450, 75, 450, 620)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
             elif b4 and b7 and b1 is False and x1 is False:
                 b1 = True
                 coluna1 = Linha(450, 75, 450, 620)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
             elif b1 and b7 and b4 is False and x4 is False:
                 b4 = True
                 coluna1 = Linha(450, 75, 450, 620)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
 
             # Computador ganha na segunda coluna
             elif b2 and b5 and b8 is False and x8 is False:
                 b8 = True
                 coluna2 = Linha(645, 75, 645, 620)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
             elif b5 and b8 and b2 is False and x2 is False:
                 b2 = True
                 coluna2 = Linha(645, 75, 645, 620)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
             elif b2 and b8 and b5 is False and x5 is False:
                 b5 = True
                 coluna2 = Linha(645, 75, 645, 620)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
 
             # Computador ganha na terceira coluna
             elif b3 and b6 and b9 is False and x9 is False:
                 b9 = True
                 coluna3 = Linha(840, 75, 840, 620)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
             elif b6 and b9 and b3 is False and x3 is False:
                 b3 = True
                 coluna3 = Linha(840, 75, 840, 620)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
             elif b3 and b9 and b6 is False and x6 is False:
                 b6 = True
                 coluna3 = Linha(840, 75, 840, 620)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
 
             # Computador ganha na diagonal principal
             elif b1 and b5 and b9 is False and x9 is False:
                 b9 = True
                 diagonalPrincipal = Linha(400, 90, 900, 600)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
             elif b5 and b9 and b1 is False and x1 is False:
                 b1 = True
                 diagonalPrincipal = Linha(400, 90, 900, 600)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
             elif b1 and b9 and b5 is False and x5 is False:
                 b5 = True
                 diagonalPrincipal = Linha(400, 90, 900, 600)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
 
             # Computador ganha na diagonal secundária
             elif b3 and b5 and b7 is False and x7 is False:
                 b7 = True
                 diagonalSecundaria = Linha(900, 90, 400, 600)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
             elif b5 and b7 and b3 is False and x3 is False:
                 b3 = True
                 diagonalSecundaria = Linha(900, 90, 400, 600)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
             elif b3 and b7 and b5 is False and x5 is False:
                 b5 = True
                 diagonalSecundaria = Linha(900, 90, 400, 600)
-                vitoriaMaquina = True
+                vitoria_maquina = True
                 defender = False
 
             if defender:
