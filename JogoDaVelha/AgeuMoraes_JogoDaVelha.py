@@ -8,10 +8,10 @@ pygame.init()
 # Trazendo arquivos para o jogo através dos seus caminhos relativos
 caminho_atual = os.path.abspath(os.path.dirname(__file__))
 
-caminho_relativo_x = os.path.join(caminho_atual, 'xBranco.png')
-caminho_relativo_bola = os.path.join(caminho_atual, 'bolaBranca.png')
-caminho_relativo_fundo = os.path.join(caminho_atual, 'imagemFundoJogoVelha.jpg')
-caminho_relativo_musica = os.path.join(caminho_atual, 'sigma.mp3')
+caminho_relativo_x = os.path.join(caminho_atual, 'Recursos_Jogo/xBranco.png')
+caminho_relativo_bola = os.path.join(caminho_atual, 'Recursos_Jogo/bolaBranca.png')
+caminho_relativo_fundo = os.path.join(caminho_atual, 'Recursos_Jogo/imagemFundoJogoVelha.jpg')
+caminho_relativo_musica = os.path.join(caminho_atual, 'Recursos_Jogo/sigma.mp3')
 
 x_imgem = pygame.image.load(caminho_relativo_x)
 bola_imagem = pygame.image.load(caminho_relativo_bola)
