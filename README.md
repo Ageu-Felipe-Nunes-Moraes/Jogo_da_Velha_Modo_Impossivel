@@ -1,44 +1,42 @@
+# Tic-Tac-Toe
 
-# Jogo da Velha
+I, Ageu Felipe Nunes Moraes, recreated the Tic-Tac-Toe game for academic purposes, inspired by the classic game. My version allows playing in a graphical mode against the computer (IMPOSSIBLE TO WIN).
 
-Eu, Ageu Felipe Nunes Moraes, recriei o Jogo da Velha para fins acadêmicos, inspirado no clássico Tic-Tac-Toe. A minha versão permite jogar em modo gráfico contra o computador(IMPOSSÍVEL DE VENCER).
-
-
-## Requisitos de Instalação
+## Installation Requirements
 
 - Python 3.x
 - pygame
 - os
 
-## Bibliotecas Necessárias
+## Required Libraries
 
-- `pygame`: Para desenvolvimento de jogos.
-- `os`: Para sistema operacional.
+- `pygame`: For game development.
+- `os`: For operating system operations.
 
-## Como Jogar
+## How to Play
 
-1. Certifique-se de ter Python e pygame instalados em seu sistema.
-2. Clone ou baixe o repositório deste jogo.
-3. Execute o arquivo principal do jogo.
-4. Jogue contra o computador no tabuleiro de 3x3(modo impossível).
-5. Use o mouse para escolher a posição que desejar.
-6. Pressione "r" para reiniciar o jogo sempre que quiser.
-7. Siga as regras tradicionais do jogo da velha para marcar uma linha, coluna ou diagonal com três símbolos iguais.
+1. Ensure that Python and pygame are installed on your system.
+2. Clone or download the repository of this game.
+3. Run the main game file.
+4. Play against the computer on the 3x3 board (impossible mode).
+5. Use the mouse to choose the desired position.
+6. Press "r" to restart the game whenever you want.
+7. Follow the traditional Tic-Tac-Toe rules to mark a row, column, or diagonal with three identical symbols.
 
-## Como Contribuir
+## How to Contribute
 
-Se deseja contribuir para o desenvolvimento deste jogo, siga estas etapas:
+If you wish to contribute to the development of this game, follow these steps:
 
-1. Fork o repositório.
-2. Faça suas modificações e melhorias no código.
-3. Teste suas alterações para garantir que funcionem corretamente.
-4. Envie um pull request descrevendo as mudanças que você fez e suas razões para elas.
+1. Fork the repository.
+2. Make your modifications and improvements to the code.
+3. Test your changes to ensure they work correctly.
+4. Submit a pull request describing the changes you made and the reasons for them.
 
-## Autor
+## Author
 
-Este jogo foi recriado por Ageu Felipe Nunes Moraes como parte de um projeto acadêmico inspirado no clássico jogo da Velha.
-Para dúvidas ou sugestões, entre em contato pelo email [ageumoraes67@gmail.com].
+This game was recreated by Ageu Felipe Nunes Moraes as part of an academic project inspired by the classic Tic-Tac-Toe game.
+For questions or suggestions, contact [ageumoraes67@gmail.com](mailto:ageumoraes67@gmail.com).
 
-## Aviso Legal
+## Disclaimer
 
-Este é um projeto de software independente e não tem afiliação com marcas ou produtos relacionados ao jogo da velha ou suas variantes.
+This is an independent software project and is not affiliated with any brands or products related to Tic-Tac-Toe or its variants.
